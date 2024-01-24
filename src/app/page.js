@@ -1,24 +1,20 @@
 'use client'
 import React from 'react';
 import Image from 'next/image'
-import Map from '../components/map'
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import { Typography, Container, Grid, CardContent, Card } from '@mui/material';
 import AppBar from '../components/appbar';
 import Toolbar from '../components/toolbar';
 import CircleIcon from '@mui/icons-material/Circle';
-import withRoot from 'components/withroot';
-
-
-
+import withRoot from '../components/withroot';
+import dynamic from 'next/dynamic';
+const Map = dynamic(() => import('../components/map'), { ssr: false });
 const rightLink = {
   fontSize: 16,
   color: 'common.white',
   ml: 3,
 };
-
-
 
 
 function Index() {
@@ -43,7 +39,7 @@ function Index() {
               color="inherit"
               sx={{ fontSize: 24 }}
             >
-              <img className='size-14' src="logo/cooplogo.svg" alt="Logo" />
+              <img className='size-16' src="logo/newapplogo.png" alt="Logo" />
             </Link>
           </Grid>
           <Grid item xs={6} container justifyContent="flex-end">

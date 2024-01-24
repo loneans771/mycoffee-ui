@@ -10,7 +10,6 @@ import {
   Card,
   Hidden,
 } from "@mui/material";
-
 const customIcon = new L.Icon({
   iconUrl: "icon/loc.png",
   iconSize: [32, 32], // Adjust the size of the icon
@@ -22,11 +21,12 @@ const Map = () => {
   const [isClient, setIsClient] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const data = [
-    { name: "Kintamani's Farmers", coordinates: [-8.409518, 115.1889] },
-    { name: "Kintamani's Collectors", coordinates: [-8.409498, 114.1889] },
-    { name: "Kintamani's Roasters", coordinates: [-7.009518, 112.1889] },
-    { name: "Kintamani's Vendor", coordinates: [40.8566, -1.3522] },
-    { name: "Kintamani's Consumers", coordinates: [48.8566, 2.3522] },
+    { name: "Kintamani Farmers", coordinates: [-8.2574, 115.354] },
+    { name: "Kintamani Collector", coordinates: [-8.45, 114.199] },
+    { name: "Kintamani Processor", coordinates: [-8.409498, 114.1889] },
+    { name: "Kintamani Trader", coordinates: [-7.009518, 112.1889] },
+    { name: "Kintamani Roaster", coordinates: [-5.39714, 105.266789] },
+    { name: "Kintamani Vendor", coordinates: [48.8566, 2.3522] },
     // Add more locations as needed
   ];
 
@@ -46,6 +46,63 @@ const Map = () => {
   };
   const mapRef = useRef(null);
 
+  const datas = [
+    {
+      names1: "Arabica Coffee",
+      names2: "Certified",
+      information1:
+        "Farming is a way to connect with nature and contribute to food security in",
+      information2:
+        "the community. It also provides an opportunity for farmers to learn about sustain",
+      image1: "logo/arabicans.png",
+      image2: "logo/certified.png",
+    },
+    {
+      names1: "Arabica Coffee",
+      names2: "Certified",
+      information1:
+        "Farming is a way to connect with nature and contribute to food security in",
+      information2:
+        "the community. It also provides an opportunity for farmers to learn about sustain",
+      image1: "logo/arabicans.png",
+      image2: "logo/certified.png",
+    },
+    {
+      names1: " ",
+      names2: " ",
+      information1: " ",
+      information2: " ",
+      image1: " ",
+      image2: " ",
+    },
+    {
+      names1: " ",
+      names2: " ",
+      information1: " ",
+      information2: " ",
+      image1: " ",
+      image2: " ",
+    },
+    {
+      names1: " ",
+      names2: " ",
+      information1: " ",
+      information2: " ",
+      image1: " ",
+      image2: " ",
+    },
+    {
+      names1: " ",
+      names2: " ",
+      information1: " ",
+      information2: " ",
+      image1: " ",
+      image2: " ",
+    },
+  ];
+
+  const selectedStepItems = datas[activeLocation];
+
   const ListofObjects = () => {
     const [showFullText, setShowFullText] = useState(false);
     const contentRef = useRef(null);
@@ -60,76 +117,166 @@ const Map = () => {
       setShowFullText(!showFullText);
     };
     const ellipsisStyle = {
+      display: "block",
       maxWidth: "200px",
+      maxHeight: "400px", // Adjust the height as needed
       overflow: "hidden",
       textOverflow: "ellipsis",
+      boxSizing: "border-box",
     };
 
     const items = [
       {
-        text: "Kintamani's Farmers",
-        imageUrl: "logo/beans.jpg",
-        imageUrl2: "logo/ind.png",
-        imageUrl3: "logo/arabicabeans.png",
-        imageUrl4: "logo/chain.svg",
-        itemdesc:
-          "Besides being famous for its natural beauty, it turns out that Bali is also famous for its kintamani coffee. Bali Kintamani coffee is produced from arabica coffee plants that are planted in the Kintamani highlands.",
-        itemclass: "1 of 5",
-        itemsorigin: "Indonesia",
-        itemsbeans: "Arabica",
+        names: "Kintamani Farmers",
+        imageUrl: "logo/snapshot_locationfarm.png",
+        itemdesc1: "-8.2574 , 115.3540 Near Gunung Batur Bukit Payang - Bali",
+        itemdesc2: "this coffee was harvested at 1200m at surface",
+        itemdesc3: "12 - 01 - 2023",
+        itemdesc4: "Arabica",
+        itemdesc5:
+          "Grown in the range of altitude between 1.200 - 1.500 MASL, this coffee came from Batukaang village in Kintamani, Bali.",
+        itemdesc6: "gatau",
+        itemdesc7: "1500 Hectares",
+        itemdesc8: "gatau",
+        itemclass: "1 of 6",
+        iteminfo: "Location",
+        iteminfo2: "Altitude",
+        iteminfo3: "Harvest Date",
+        iteminfo4: "Bean Type",
+        iteminfo5: "Origin Coffee",
+        iteminfo6: "Carbon Footprint",
+        iteminfo7: "planting area",
+        iteminfo8: "Carbon Footprint",
+        itemsoninformation: "Arabica Beans",
+        itemsoncertified: "logo/certified.png",
         Methods: "FullWashed",
       },
       {
-        text: "Kintamani's Collectors",
-        imageUrl: "logo/beans.jpg",
-        imageUrl2: "logo/ind.png",
-        imageUrl3: "logo/arabicabeans.png",
-        imageUrl4: "logo/chain.svg",
-        itemdesc: "the origin is come from awdjaksdksaow",
-        itemclass: "2 of 5",
-        itemsorigin: "Indonesia",
-        itemsbeans: "Arabica",
-        Methods: "FullWashed",
+        names: "Kintamani Collectors",
+        imageUrl: "logo/snapshot_collectors.png",
+        imageUrl3: "logo/fairtradess.png",
+        itemdesc1: "(-8.409498, 114.1889) near Cemetuk - Banyuwangi",
+        itemdesc2: "Arabica",
+        itemdesc3: "✅ Fair Trades",
+        itemdesc4: "List of Origin here",
+        itemdesc5: "",
+        itemdesc6: "40000 t",
+        itemdesc7: "kayaknya asal aja nanti",
+        itemclass: "2 of 6",
+        iteminfo: "Location",
+        iteminfo2: "Type Beans",
+        iteminfo3: "Certified",
+        iteminfo4: "Origin",
+        iteminfo5: "Carbon Footprint",
+        iteminfo6: "Many to Buy",
+        iteminfo7: "Many to Sell",
+        itemsorigin: "",
+        itemsbeans: " ",
+        Methods: " ",
       },
       {
-        text: "Kintamani's Roasters",
-        imageUrl: "logo/beans.jpg",
-        imageUrl2: "logo/ind.png",
-        imageUrl3: "logo/arabicabeans.png",
-        imageUrl4: "logo/chain.svg",
-        itemdesc: "the beans also have some quality awdaksdwalds",
-        itemclass: "3 of 5",
-        itemsorigin: "Indonesia",
-        itemsbeans: "Arabica",
-        Methods: "FullWashed",
+        names: "Kintamani Processors",
+        imageUrl: "logo/snapshot_collectors.png",
+        itemdesc1: "(-8.409498, 114.1889) near Cemetuk - Banyuwangi",
+        itemdesc2: "Full Washed",
+        itemdesc3: "1000 t / month",
+        itemdesc4: "",
+        itemclass: "3 of 6",
+        iteminfo: "Location",
+        iteminfo2: "Process",
+        iteminfo3: "Volume to Process",
+        iteminfo4: "Carbon Footprint",
+        itemsorigin: " ",
+        itemsbeans: " ",
+        Methods: " ",
       },
       {
-        text: "Kintamani's Vendor",
-        imageUrl: "logo/beans.jpg",
-        imageUrl2: "logo/ind.png",
-        imageUrl3: "logo/arabicabeans.png",
-        imageUrl4: "logo/chain.svg",
-        itemdesc: "also the awdjskdwaosdwakswdls",
-        itemclass: "4 of 5",
-        itemsorigin: "Indonesia",
-        itemsbeans: "Arabica",
-        Methods: "FullWashed",
+        names: "Kintamani Traders",
+        imageUrl: "logo/snapshot_collectors.png",
+        itemdesc1: "(-8.409498, 114.1889) near Cemetuk - Banyuwangi",
+        itemdesc2: "1 weeks",
+        itemdesc3: "26 - 1 - 2023",
+        itemdesc4: "Carbon Loaded",
+        itemclass: "4 of 6",
+        iteminfo: "Location",
+        iteminfo2: "Long Coffee in Warehouse",
+        iteminfo3: "Shipping date",
+        iteminfo4: "Carbon Footprint",
+        itemsorigin: " ",
+        itemsbeans: " ",
+        Methods: " ",
       },
       {
-        text: "Kintamani's Consumers",
-        imageUrl: "logo/beans.jpg",
-        imageUrl2: "logo/ind.png",
-        imageUrl3: "logo/arabicabeans.png",
-        imageUrl4: "logo/chain.svg",
-        itemdesc: "also the awdjskdwaosdwakswdls",
-        itemclass: "5 of 5",
-        itemsorigin: "Indonesia",
-        itemsbeans: "Arabica",
-        Methods: "FullWashed",
+        names: "Kintamani Roaster",
+        imageUrl: "logo/snapshot_roasters.png",
+        itemdesc1: "-7.009518, 112.1889 near from Lamongan - East Java",
+        itemdesc2: (
+          <div>
+            Acidity: ★★★
+            <br />
+            Aftertaste: ★★★
+            <br />
+            Sweetness: ★★
+            <br />
+            Body: ★★★
+            <br />
+          </div>
+        ),
+        itemdesc3: (
+          <div>
+            <img src="logo/coffeebeans.png" alt="Your Alt Text" />
+            medium Dark
+          </div>
+        ),
+        itemdesc4: (
+          <div>
+            Mango{" "}
+            <img className="h-7 w-7" src="logo/mango.png" alt="Your Alt Text" />
+            Raisin{" "}
+            <img
+              className="h-7 w-7"
+              src="logo/raisins.png"
+              alt="Your Alt Text"
+            />
+            Chocolate Cookie{" "}
+            <img
+              className="h-7 w-7"
+              src="logo/cookie.png"
+              alt="Your Alt Text"
+            />
+          </div>
+        ),
+        itemclass: "5 of 6",
+        iteminfo: "Location",
+        iteminfo2: "Tasting Notes",
+        iteminfo3: "Roasting Level",
+        iteminfo4: "Cupping Notes",
+        iteminfo5: "Carbon Footprint",
+        itemsorigin: " ",
+        itemsbeans: " ",
+        Methods: " ",
+      },
+      {
+        names: "Kintamani Vendor",
+        imageUrl: "logo/snapshot_vendor.png",
+        itemdesc1:
+          "-5.397140, 105.266789 near from Kupang kota - Bandar Lampung",
+        itemdesc2: "",
+        itemdesc3: "",
+        itemdesc4: "",
+        itemclass: "6 of 6",
+        iteminfo: "Location",
+        iteminfo2: "Sale per Month",
+        iteminfo3: "Carbon Footprint",
+        iteminfo4: " ",
+        itemsorigin: " ",
+        itemsbeans: " ",
+        Methods: " ",
       },
       // Add more items as needed
     ];
     const selectedStepItem = items[activeLocation];
+    // const selectedStepItems = items1[activeLocation];
 
     return (
       <ul>
@@ -144,7 +291,7 @@ const Map = () => {
                     alt="Coffee Beans Logo"
                   />
                   <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    {selectedStepItem.text}
+                    {selectedStepItem.names}
                   </h2>
                 </div>
                 <p className="mt-2 text-lg leading-8 text-gray-600">
@@ -163,7 +310,7 @@ const Map = () => {
                         className="h-5 w-5"
                         alt="Coffee Beans Logo"
                       />
-                      About the Coffee
+                      {selectedStepItem.iteminfo}
                     </div>
                   </div>
                   <div className="group relative">
@@ -172,21 +319,17 @@ const Map = () => {
                       style={ellipsisStyle}
                       className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
                     >
-                      {showFullText
-                        ? selectedStepItem.itemdesc
-                        : `${selectedStepItem.itemdesc.slice(0, 100)}...`}
+                      {selectedStepItem.itemdesc1}
                     </p>
-                    {!showFullText && (
-                      <a href="#read-more" onClick={toggleShowFullText}>
-                        Read more
-                      </a>
-                    )}
                   </div>
                   <div className="relative mt-8 flex items-center gap-x-4">
                     <img
                       src={selectedStepItem.imageUrl}
                       alt=""
                       className="h-40 w-40 rounded-full bg-gray-50"
+                      style={{
+                        display: selectedStepItem.imageUrl ? "block" : "none",
+                      }}
                     />
                     <div className="text-sm leading-6">
                       <p className="font-semibold text-gray-900">
@@ -200,59 +343,47 @@ const Map = () => {
                   </div>
                 </article>
                 <article
-                  key={selectedStepItem.text}
-                  className="flex max-w-xl flex-col items-start justify-between"
+                  key={selectedStepItem.names}
+                  className="flex max-w-xl flex-col items-start"
                 >
                   <div className="flex items-center gap-x-4 text-md">
-                    <div className="flex items-center">
-                      <img
-                        src="logo/coffeebeans.png"
-                        className="h-5 w-5"
-                        alt="Coffee Beans Logo"
-                      />
-                      About the Origin
-                    </div>
+                    {selectedStepItem.iteminfo2 &&
+                      selectedStepItem.iteminfo2.trim() !== "" && (
+                        <div className="flex items-center">
+                          <img
+                            src="logo/coffeebeans.png"
+                            className="h-5 w-5"
+                            alt="Coffee Beans Logo"
+                          />
+                          {selectedStepItem.iteminfo2}
+                        </div>
+                      )}
                   </div>
                   <div className="group relative">
-                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                      <a href={selectedStepItem.itemscore}>
-                        <span className="absolute inset-0" />
-                      </a>
-                    </h3>
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                      {selectedStepItem.itemsorigin}
+                    <p
+                      style={ellipsisStyle}
+                      className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
+                    >
+                      {selectedStepItem.itemdesc2}
                     </p>
                   </div>
-                  <div className="relative mt-8 flex items-center gap-x-4">
-                    <img
-                      src={selectedStepItem.imageUrl2}
-                      alt=""
-                      className="h-40 w-40 ove rounded-full bg-gray-500"
-                    />
-                    <div className="text-sm leading-6">
-                      <p className="font-semibold text-gray-900">
-                        <a href={selectedStepItem.itemdesc}>
-                          <span className="absolute inset-0" />
-                          {/* {post.author.name} */}
-                        </a>
-                      </p>
-                      {/* <p className="text-gray-600">{post.author.role}</p> */}
-                    </div>
-                  </div>
                 </article>
                 <article
                   key={selectedStepItem.text}
-                  className="flex max-w-xl flex-col items-start justify-between"
+                  className="flex max-w-xl flex-col items-start"
                 >
                   <div className="flex items-center gap-x-4 text-md">
-                    <div className="flex items-center">
-                      <img
-                        src="logo/coffeebeans.png"
-                        className="h-5 w-5"
-                        alt="Coffee Beans Logo"
-                      />
-                      About the Beans
-                    </div>
+                    {selectedStepItem.iteminfo3 &&
+                      selectedStepItem.iteminfo3.trim() !== "" && (
+                        <div className="flex items-center">
+                          <img
+                            src="logo/coffeebeans.png"
+                            className="h-5 w-5"
+                            alt="Coffee Beans Logo"
+                          />
+                          {selectedStepItem.iteminfo3}
+                        </div>
+                      )}
                   </div>
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
@@ -260,40 +391,45 @@ const Map = () => {
                         <span className="absolute inset-0" />
                       </a>
                     </h3>
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                      {selectedStepItem.itemsbeans}
+                    <p
+                      style={ellipsisStyle}
+                      className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
+                    >
+                      {selectedStepItem.itemdesc3}
                     </p>
                   </div>
+
                   <div className="relative mt-8 flex items-center gap-x-4">
-                    <img
-                      src={selectedStepItem.imageUrl3}
-                      alt=""
-                      className="h-40 w-40 rounded-full bg-gray-50"
-                    />
+                    {selectedStepItem.imageUrl3 &&
+                      selectedStepItem.imageUrl3.trim() !== "" && (
+                        <img
+                          src={selectedStepItem.imageUrl3}
+                          alt=""
+                          className="h-40 w-40  bg-gray-50"
+                        />
+                      )}
                     <div className="text-sm leading-6">
-                      <p className="font-semibold text-gray-900">
-                        <a href={selectedStepItem.itemdesc}>
-                          <span className="absolute inset-0" />
-                          {/* {post.author.name} */}
-                        </a>
-                      </p>
+                      <p className="font-semibold text-gray-900"></p>
                       {/* <p className="text-gray-600">{post.author.role}</p> */}
                     </div>
                   </div>
                 </article>
                 <article
                   key={selectedStepItem.text}
-                  className="flex max-w-xl flex-col items-start justify-between"
+                  className="flex max-w-xl flex-col items-start"
                 >
                   <div className="flex items-center gap-x-4 text-md">
-                    <div className="flex items-center">
-                      <img
-                        src="logo/coffeebeans.png"
-                        className="h-5 w-5"
-                        alt="Coffee Beans Logo"
-                      />
-                      About Processing Method
-                    </div>
+                    {selectedStepItem.iteminfo4 &&
+                      selectedStepItem.iteminfo4.trim() !== "" && (
+                        <div className="flex items-center">
+                          <img
+                            src="logo/coffeebeans.png"
+                            className="h-5 w-5"
+                            alt="Coffee Beans Logo"
+                          />
+                          {selectedStepItem.iteminfo4}
+                        </div>
+                      )}
                   </div>
                   <div className="group relative">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
@@ -302,7 +438,7 @@ const Map = () => {
                       </a>
                     </h3>
                     <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                      {selectedStepItem.Methods}
+                      {selectedStepItem.itemdesc4}
                     </p>
                   </div>
                   <div className="relative mt-8 flex items-center gap-x-4">
@@ -310,6 +446,9 @@ const Map = () => {
                       src={selectedStepItem.imageUrl4}
                       alt=""
                       className="h-40 w-40 rounded-full bg-gray-50"
+                      style={{
+                        display: selectedStepItem.imageUrl4 ? "block" : "none",
+                      }}
                     />
                     <div className="text-sm leading-6">
                       <p className="font-semibold text-gray-900">
@@ -322,6 +461,194 @@ const Map = () => {
                     </div>
                   </div>
                 </article>
+                <article
+                  key={selectedStepItem.text}
+                  className="flex max-w-xl flex-col items-start justify-between"
+                >
+                  <div className="flex items-center gap-x-4 text-md">
+                    {selectedStepItem.iteminfo5 &&
+                      selectedStepItem.iteminfo5.trim() !== "" && (
+                        <div className="flex items-center">
+                          <img
+                            src="logo/coffeebeans.png"
+                            className="h-5 w-5"
+                            alt="Coffee Beans Logo"
+                          />
+                          {selectedStepItem.iteminfo5}
+                        </div>
+                      )}
+                  </div>
+                  <div className="group relative">
+                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <a href={selectedStepItem.itemscore}>
+                        <span className="absolute inset-0" />
+                      </a>
+                    </h3>
+                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                      {selectedStepItem.itemdesc5}
+                    </p>
+                  </div>
+                  <div className="relative mt-8 flex items-center gap-x-4">
+                    <img
+                      src={selectedStepItem.imageUrl5}
+                      alt=""
+                      className="h-40 w-40 rounded-full bg-gray-50"
+                      style={{
+                        display: selectedStepItem.imageUrl5 ? "block" : "none",
+                      }}
+                    />
+                    <div className="text-sm leading-6">
+                      <p className="font-semibold text-gray-900">
+                        <a href={selectedStepItem.itemdesc}>
+                          <span className="absolute inset-0" />
+                          {/* {post.author.name} */}
+                        </a>
+                      </p>
+                      {/* <p className="text-gray-600">{post.author.role}</p> */}
+                    </div>
+                  </div>
+                </article>
+                <article
+                  key={selectedStepItem.text}
+                  className="flex max-w-xl flex-col items-start"
+                >
+                  <div className="flex items-center gap-x-4 text-md">
+                    {selectedStepItem.iteminfo6 &&
+                      selectedStepItem.iteminfo6.trim() !== "" && (
+                        <div className="flex items-center">
+                          <img
+                            src="logo/coffeebeans.png"
+                            className="h-5 w-5"
+                            alt="Coffee Beans Logo"
+                          />
+                          {selectedStepItem.iteminfo6}
+                        </div>
+                      )}
+                  </div>
+                  <div className="group relative">
+                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <a href={selectedStepItem.itemscore}>
+                        <span className="absolute inset-0" />
+                      </a>
+                    </h3>
+                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                      {selectedStepItem.itemdesc6}
+                    </p>
+                  </div>
+                  <div className="relative mt-8 flex items-center gap-x-4">
+                    <img
+                      src={selectedStepItem.imageUrl6}
+                      alt=""
+                      className="h-40 w-40 rounded-full bg-gray-50"
+                      style={{
+                        display: selectedStepItem.imageUrl6 ? "block" : "none",
+                      }}
+                    />
+                    <div className="text-sm leading-6">
+                      <p className="font-semibold text-gray-900">
+                        <a href={selectedStepItem.itemdesc}>
+                          <span className="absolute inset-0" />
+                          {/* {post.author.name} */}
+                        </a>
+                      </p>
+                      {/* <p className="text-gray-600">{post.author.role}</p> */}
+                    </div>
+                  </div>
+                </article>
+                <article
+                  key={selectedStepItem.text}
+                  className="flex max-w-xl flex-col items-start"
+                >
+                  <div className="flex items-center gap-x-4 text-md">
+                    {selectedStepItem.iteminfo7 &&
+                      selectedStepItem.iteminfo7.trim() !== "" && (
+                        <div className="flex items-center">
+                          <img
+                            src="logo/coffeebeans.png"
+                            className="h-5 w-5"
+                            alt="Coffee Beans Logo"
+                          />
+                          {selectedStepItem.iteminfo7}
+                        </div>
+                      )}
+                  </div>
+                  <div className="group relative">
+                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <a href={selectedStepItem.itemscore}>
+                        <span className="absolute inset-0" />
+                      </a>
+                    </h3>
+                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                      {selectedStepItem.itemdesc7}
+                    </p>
+                  </div>
+                  <div className="relative mt-8 flex items-center gap-x-4">
+                    <img
+                      src={selectedStepItem.imageUrl7}
+                      alt=""
+                      className="h-40 w-40 rounded-full bg-gray-50"
+                      style={{
+                        display: selectedStepItem.imageUrl7 ? "block" : "none",
+                      }}
+                    />
+                    <div className="text-sm leading-6">
+                      <p className="font-semibold text-gray-900">
+                        <a href={selectedStepItem.itemdesc}>
+                          <span className="absolute inset-0" />
+                          {/* {post.author.name} */}
+                        </a>
+                      </p>
+                      {/* <p className="text-gray-600">{post.author.role}</p> */}
+                    </div>
+                  </div>
+                </article>
+                {/* <article
+                  key={selectedStepItem.text}
+                  className="flex max-w-xl flex-col items-start"
+                >
+                  <div className="flex items-center gap-x-4 text-md">
+                    {selectedStepItem.iteminfo6 &&
+                      selectedStepItem.iteminfo6.trim() !== "" && (
+                        <div className="flex items-center">
+                          <img
+                            src="logo/coffeebeans.png"
+                            className="h-5 w-5"
+                            alt="Coffee Beans Logo"
+                          />
+                          {selectedStepItem.iteminfo6}
+                        </div>
+                      )}
+                  </div>
+                  <div className="group relative">
+                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <a href={selectedStepItem.itemscore}>
+                        <span className="absolute inset-0" />
+                      </a>
+                    </h3>
+                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                      {selectedStepItem.itemdesc6}
+                    </p>
+                  </div>
+                  <div className="relative mt-8 flex items-center gap-x-4">
+                    <img
+                      src={selectedStepItem.imageUrl6}
+                      alt=""
+                      className="h-40 w-40 rounded-full bg-gray-50"
+                      style={{
+                        display: selectedStepItem.imageUrl6 ? "block" : "none",
+                      }}
+                    />
+                    <div className="text-sm leading-6">
+                      <p className="font-semibold text-gray-900">
+                        <a href={selectedStepItem.itemdesc}>
+                          <span className="absolute inset-0" />
+                      
+                        </a>
+                      </p>
+              
+                    </div>
+                  </div>
+                </article> */}
               </div>
             </div>
           </div>
@@ -360,6 +687,7 @@ const Map = () => {
     Popup,
     Polyline,
   } = require("react-leaflet");
+
   // Import 'leaflet/dist/leaflet.css' only on the client side
   const getPolylinePositions = () => {
     return data.map((location) => location.coordinates);
@@ -410,9 +738,19 @@ const Map = () => {
       <Card style={{ paddingBottom: "7em" }}>
         <div className="background-container flex items-center justify-center rounded-md">
           <div className="grid grid-cols-12 gap-1">
-            <div className="col-span-11">
+            <div className="col-span-3 flex items-center">
+              {/* Adjust the col-span to control the image size */}
+              <img
+                src="logo/newapplogo.png"
+                alt="Smart Coffee"
+                className="w-20 h-20 rounded-l-md"
+                style={{ marginLeft: 0 }} // Set marginLeft to 0 to align the logo to the very left
+              />
+            </div>
+            <div className="col-span-9 flex items-center">
+              {/* Align both columns to the center */}
               <h4 className="text-2xl font-mono" style={{ color: "white" }}>
-                Coffee Tracker
+                Smart Coffee
               </h4>
             </div>
           </div>
@@ -505,15 +843,59 @@ const Map = () => {
         <div className="bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0">
-              <div className="flex items-center">
+              {selectedStepItems.names1 &&
+                selectedStepItems.names1.trim() !== "" && (
+                  <div className="flex items-center">
+                    <img
+                      src="logo/coffeebeans.png"
+                      className="h-10 w-10"
+                      alt="Coffee Beans Logo"
+                    />
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                      {selectedStepItems.names1}
+                    </h2>
+                  </div>
+                )}
+            </div>
+            <article
+              key={activeLocation}
+              className="flex max-w-xl flex-col items-start justify-between pt-5"
+            >
+              <div className="flex items-center gap-x-4 text-md">
+                {selectedStepItems.information1}
+              </div>
+              <div className="relative mt-8 flex items-center gap-x-4">
                 <img
-                  src="logo/coffeebeans.png"
-                  className="h-10 w-10"
-                  alt="Coffee Beans Logo"
+                  src={selectedStepItems.image1}
+                  alt=""
+                  className="h-70 w-70 rounded-full bg-gray-50"
+                  style={{
+                    display: selectedStepItems.image1 ? "block" : "none",
+                  }}
                 />
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  Arabica Beans
-                </h2>
+                <div className="text-sm leading-6">
+                  <p className="font-semibold text-gray-900"></p>
+                  {/* <p className="text-gray-600">{post.author.role}</p> */}
+                </div>
+              </div>
+            </article>
+          </div>
+          <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-10">
+            <div className="mx-auto max-w-2xl lg:mx-0">
+              <div className="flex items-center">
+                {selectedStepItems.names2 &&
+                  selectedStepItems.names2.trim() !== "" && (
+                    <div className="flex items-center">
+                      <img
+                        src="logo/coffeebeans.png"
+                        className="h-10 w-10"
+                        alt="Coffee Beans Logo"
+                      />
+                      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        {selectedStepItems.names2}
+                      </h2>
+                    </div>
+                  )}
               </div>
             </div>
             <article
@@ -527,34 +909,16 @@ const Map = () => {
                         <span className="absolute inset-0" />
                       </a> */}
                 </h3>
-                  <img
-                    src="logo/coffeebeans.png"
-                    className="h-5 w-5"
-                    alt="Coffee Beans Logo"
-                  />
-                  <p className="line-clamp-7 text-sm leading-6 text-gray-600">
-                    Besides being famous for its natural beauty, it turns out
-                    that Bali is also famous for its kintamani coffee. Bali
-                    Kintamani coffee is produced from arabica coffee plants that
-                    are planted in the Kintamani highlands, precisely in
-                    Kintamani Village, Bangli Regency, Bali Province, with an
-                    altitude above 900 meters above sea level. The Kintamani
-                    area is located on the slopes of the Batur volcano. With
-                    Entisel and Inceptisol (Regusol) soil types. This area has
-                    cool and dry air with a lot of rainfall during the 6-7
-                    months of the rainy season. Arabica coffee plants are formed
-                    from selected varieties. Coffee trees are planted under
-                    shade trees and combined with other crops and managed and
-                    given organic fertilizers. This coffee has a distinctive
-                    taste, namely citrus aroma with a low acidity level, so it
-                    is in great demand by international consumers.
-                  </p>
+                <p className="line-clamp-7 text-sm leading-6 text-gray-600"></p>
               </div>
               <div className="relative mt-8 flex items-center gap-x-4">
                 <img
-                  src={"logo/logo3.jpg"}
+                  src={selectedStepItems.image2}
                   alt=""
-                  className="h-40 w-40 ove rounded-full bg-gray-500"
+                  className="h-70 w-70  bg-gray-50"
+                  style={{
+                    display: selectedStepItems.image2 ? "block" : "none",
+                  }}
                 />
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-gray-900"></p>
@@ -564,10 +928,59 @@ const Map = () => {
             </article>
           </div>
         </div>
+        <footer className="bg-blue-300 py-8">
+          <div className="container mx-auto">
+            <div className="flex flex-wrap items-center justify-between">
+              <div className="w-full px-2 md:w-6/12 flex items-center">
+                <h4 className="text-md font-semibold text-black">
+                  Powered by:
+                </h4>
+                <div className="md:block">
+                  <img
+                    src="logo/chain.svg"
+                    className="w-30 h-30 bg-white p-2 rounded-full logo"
+                    alt="Logo"
+                  />
+                </div>
+              </div>
+              <div className="w-full px-4 md:w-6/12">
+                <div className="flex items-center justify-between">
+                  <div className="hidden md:block">
+                    {/* <ul className="flex items-center space-x-6 text-gray-200">
+                      <li>
+                        <a href="#" className="hover:text-gray-300">
+                          Facebook
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-gray-300">
+                          Twitter
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" className="hover:text-gray-300">
+                          LinkedIn
+                        </a>
+                      </li>
+                    </ul> */}
+                  </div>
+                  <div className="hidden md:block">
+                    {/* <img
+                      src="logo/chain.svg"
+                      className="w-30 h-30 bg-white p-2 rounded-full logo"
+                      alt="Logo"
+                    /> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
         {/* Add more content or components for the additional information */}
       </div>
     </div>
   );
 };
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>;
 
 export default Map;
