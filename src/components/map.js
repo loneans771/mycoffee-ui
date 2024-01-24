@@ -195,8 +195,8 @@ const Map = () => {
             Carbon Footprint = 5,6 liters * 2,68 kg CO2/liter ≈ 15,008 kg CO2
           </div>
         ),
-        itemdesc6: "40000 t",
-        itemdesc7: "kayaknya asal aja nanti",
+        itemdesc6: "4000 t / month",
+        itemdesc7: " 3900 t / month",
         itemclass: "2 of 6",
         iteminfo: "Location",
         iteminfo2: "Type Beans",
@@ -214,7 +214,7 @@ const Map = () => {
         imageUrl: "logo/snapshot_canggu.png",
         itemdesc1: "(-8.6478, 115.1385) near Canggu - Bali",
         itemdesc2: "Full Washed",
-        itemdesc3: "1000 t / month",
+        itemdesc3: "2400 t / month",
         itemdesc4: (
           <div>
             For canggu to Jakarta <br />
