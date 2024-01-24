@@ -22,11 +22,11 @@ const Map = () => {
   const [activeStep, setActiveStep] = useState(0);
   const data = [
     { name: "Kintamani Farmers", coordinates: [-8.2574, 115.354] },
-    { name: "Kintamani Collector", coordinates: [-8.45, 114.199] },
-    { name: "Kintamani Processor", coordinates: [-8.409498, 114.1889] },
-    { name: "Kintamani Trader", coordinates: [-7.009518, 112.1889] },
-    { name: "Kintamani Roaster", coordinates: [-5.39714, 105.266789] },
-    { name: "Kintamani Vendor", coordinates: [48.8566, 2.3522] },
+    { name: "Kintamani Collector", coordinates: [-8.5069, 115.2625] },
+    { name: "Kintamani Processor", coordinates: [-8.6478, 115.1385] },
+    { name: "Kintamani Trader", coordinates: [-6.1403, 106.7559] },
+    { name: "Kintamani Roaster", coordinates: [48.8566, 2.3522] },
+    { name: "Kintamani Vendor", coordinates: [45.764, 4.8357] },
     // Add more locations as needed
   ];
 
@@ -50,8 +50,20 @@ const Map = () => {
     {
       names1: "Arabica Coffee",
       names2: "Certified",
-      information1:
-        "Farming is a way to connect with nature and contribute to food security in",
+      information1: (
+        <div>
+          The vibrant red cherries are carefully plucked, signaling the
+          beginning of a meticulous journey from tree to cup. The farmers,
+          guardians of this precious harvest, choose between wet processing or
+          the art of natural drying, each method adding its own brushstroke to
+          the canvas of flavor. As the coffee beans make their way through the
+          processing mills, the air is filled with the aroma of possibility. The
+          beans, now transformed, carry the essence of Kintamani – a
+          well-balanced symphony of flavors. Notes of citrus, floral undertones,
+          and a subtle hint of earthiness characterize this unique brew, a
+          testament to the terroir of the region.
+        </div>
+      ),
       information2:
         "the community. It also provides an opportunity for farmers to learn about sustain",
       image1: "logo/arabicans.png",
@@ -60,12 +72,24 @@ const Map = () => {
     {
       names1: "Arabica Coffee",
       names2: "Certified",
-      information1:
-        "Farming is a way to connect with nature and contribute to food security in",
+      information1: (
+        <div>
+          The vibrant red cherries are carefully plucked, signaling the
+          beginning of a meticulous journey from tree to cup. The farmers,
+          guardians of this precious harvest, choose between wet processing or
+          the art of natural drying, each method adding its own brushstroke to
+          the canvas of flavor. As the coffee beans make their way through the
+          processing mills, the air is filled with the aroma of possibility. The
+          beans, now transformed, carry the essence of Kintamani – a
+          well-balanced symphony of flavors. Notes of citrus, floral undertones,
+          and a subtle hint of earthiness characterize this unique brew, a
+          testament to the terroir of the region.
+        </div>
+      ),
       information2:
         "the community. It also provides an opportunity for farmers to learn about sustain",
       image1: "logo/arabicans.png",
-      image2: "logo/certified.png",
+      image2: "logo/fairtradess.png",
     },
     {
       names1: " ",
@@ -135,7 +159,12 @@ const Map = () => {
         itemdesc4: "Arabica",
         itemdesc5:
           "Grown in the range of altitude between 1.200 - 1.500 MASL, this coffee came from Batukaang village in Kintamani, Bali.",
-        itemdesc6: "gatau",
+        itemdesc6: (
+          <div>
+            Carbon Footprint = Fuel Consumed * Emission Factor <br />
+            Carbon Footprint = 6,6 liters * 2,68 kg CO2/liter ≈ 17,648 kg CO2
+          </div>
+        ),
         itemdesc7: "1500 Hectares",
         itemdesc8: "gatau",
         itemclass: "1 of 6",
@@ -153,13 +182,19 @@ const Map = () => {
       },
       {
         names: "Kintamani Collectors",
-        imageUrl: "logo/snapshot_collectors.png",
+        imageUrl: "logo/snapshot_ubud.png",
         imageUrl3: "logo/fairtradess.png",
-        itemdesc1: "(-8.409498, 114.1889) near Cemetuk - Banyuwangi",
+        itemdesc1: "(-8.5069, 115.2625) near Ubud - Bali",
         itemdesc2: "Arabica",
         itemdesc3: "✅ Fair Trades",
         itemdesc4: "List of Origin here",
-        itemdesc5: "",
+        itemdesc5: (
+          <div>
+            Carbon Footprint = Fuel Consumed * Emission Factor
+            <br />
+            Carbon Footprint = 5,6 liters * 2,68 kg CO2/liter ≈ 15,008 kg CO2
+          </div>
+        ),
         itemdesc6: "40000 t",
         itemdesc7: "kayaknya asal aja nanti",
         itemclass: "2 of 6",
@@ -176,11 +211,17 @@ const Map = () => {
       },
       {
         names: "Kintamani Processors",
-        imageUrl: "logo/snapshot_collectors.png",
-        itemdesc1: "(-8.409498, 114.1889) near Cemetuk - Banyuwangi",
+        imageUrl: "logo/snapshot_canggu.png",
+        itemdesc1: "(-8.6478, 115.1385) near Canggu - Bali",
         itemdesc2: "Full Washed",
         itemdesc3: "1000 t / month",
-        itemdesc4: "",
+        itemdesc4: (
+          <div>
+            For canggu to Jakarta <br />
+            Carbon Footprint = Fuel Consumed * Emission Factor <br />
+            Carbon Footprint = 236 liters * 2.68 kg CO2/liter ≈ 632,48 kg CO2
+          </div>
+        ),
         itemclass: "3 of 6",
         iteminfo: "Location",
         iteminfo2: "Process",
@@ -192,11 +233,24 @@ const Map = () => {
       },
       {
         names: "Kintamani Traders",
-        imageUrl: "logo/snapshot_collectors.png",
-        itemdesc1: "(-8.409498, 114.1889) near Cemetuk - Banyuwangi",
-        itemdesc2: "1 weeks",
+        imageUrl: "logo/snapshot_kapuk.png",
+        itemdesc1: "(-6.1403, 106.7559) near Kapuk - Jakarta",
+        itemdesc2: (
+          <div>
+            in 1 weeks on warehouse <br />
+            Carbon Footprint=1,000,000kg × 0,1kg CO2/kg
+            <br />
+            Carbon Footprint=100,000 kg CO2
+          </div>
+        ),
         itemdesc3: "26 - 1 - 2023",
-        itemdesc4: "Carbon Loaded",
+        itemdesc4: (
+          <div>
+            From kapuk to Paris France <br />
+            Carbon Footprint=Fuel Consumed × Emission Factor <br />
+            Carbon Footprint=2313,2 liters × 2,68 kg CO2/liter ≈ 6194,496 kg CO2
+          </div>
+        ),
         itemclass: "4 of 6",
         iteminfo: "Location",
         iteminfo2: "Long Coffee in Warehouse",
@@ -208,8 +262,8 @@ const Map = () => {
       },
       {
         names: "Kintamani Roaster",
-        imageUrl: "logo/snapshot_roasters.png",
-        itemdesc1: "-7.009518, 112.1889 near from Lamongan - East Java",
+        imageUrl: "logo/snapshot_paris.png",
+        itemdesc1: "(48.8566, 2.3522) near from Paris - France",
         itemdesc2: (
           <div>
             Acidity: ★★★
@@ -246,6 +300,13 @@ const Map = () => {
             />
           </div>
         ),
+        itemdesc5: (
+          <div>
+            From Paris France to Lyon <br />
+            Carbon Footprint=Fuel Consumed × Emission Factor <br />
+            Carbon Footprint=76,6 liters × 2,68 kg CO2/liter ≈ 205,088 kg CO2
+          </div>
+        ),
         itemclass: "5 of 6",
         iteminfo: "Location",
         iteminfo2: "Tasting Notes",
@@ -258,11 +319,17 @@ const Map = () => {
       },
       {
         names: "Kintamani Vendor",
-        imageUrl: "logo/snapshot_vendor.png",
-        itemdesc1:
-          "-5.397140, 105.266789 near from Kupang kota - Bandar Lampung",
-        itemdesc2: "",
-        itemdesc3: "",
+        imageUrl: "logo/snapshot_lyon.png",
+        itemdesc1: "(45.764, 4.8357) near from Lyon - France",
+        itemdesc2: "900 t / month",
+        itemdesc3: (
+          <div>
+            in 1 weeks on warehouse <br />
+            Carbon Footprint=1,000,000kg × 0,1kg CO2/kg
+            <br />
+            Carbon Footprint=100,000 kg CO2
+          </div>
+        ),
         itemdesc4: "",
         itemclass: "6 of 6",
         iteminfo: "Location",
@@ -437,7 +504,10 @@ const Map = () => {
                         <span className="absolute inset-0" />
                       </a>
                     </h3>
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                    <p
+                      style={ellipsisStyle}
+                      className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
+                    >
                       {selectedStepItem.itemdesc4}
                     </p>
                   </div>
@@ -474,7 +544,10 @@ const Map = () => {
                             className="h-5 w-5"
                             alt="Coffee Beans Logo"
                           />
-                          {selectedStepItem.iteminfo5}
+                          <p style={ellipsisStyle}>
+                            {" "}
+                            {selectedStepItem.iteminfo5}
+                          </p>
                         </div>
                       )}
                   </div>
@@ -484,7 +557,10 @@ const Map = () => {
                         <span className="absolute inset-0" />
                       </a>
                     </h3>
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                    <p
+                      style={ellipsisStyle}
+                      className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
+                    >
                       {selectedStepItem.itemdesc5}
                     </p>
                   </div>
@@ -531,7 +607,10 @@ const Map = () => {
                         <span className="absolute inset-0" />
                       </a>
                     </h3>
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                    <p
+                      style={ellipsisStyle}
+                      className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600"
+                    >
                       {selectedStepItem.itemdesc6}
                     </p>
                   </div>
