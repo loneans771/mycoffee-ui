@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: smartcoffee-chainsmart-id-gateway
+  namespace: default
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - hosts:
+      - "smartcoffee.chainsmart.id"
+      port:
+        name: https
+        protocol: HTTPS
+        number: 443
+      tls:
+        mode: SIMPLE
+        credentialName: smartcoffee-chainsmart-id

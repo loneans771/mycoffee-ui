@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartcoffee-deployment
+  labels:
+    app: smartcoffee
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartcoffee
+  template:
+    metadata:
+      labels:
+        app: smartcoffee
+    spec:
+      imagePullSecrets:
+        - name: chainsmart-pull-image-secret
+      containers:
+      - name: smartcoffee
+        image: chainsmart/smartcoffee:0.0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "5Mi"
+            cpu: "10m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"

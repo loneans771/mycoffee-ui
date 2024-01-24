@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: smartcoffee-chainsmart-id-vsvc
+  namespace: default
+spec:
+  hosts:
+  - "smartcoffee.chainsmart.id"
+  gateways:
+  - smartcoffee-chainsmart-id-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: smartcoffee
+        port:
+          number: 80

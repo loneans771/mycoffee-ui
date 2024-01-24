@@ -1,0 +1,23 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: smartcoffee-chainsmart-id-cert
+  namespace: istio-system
+spec:
+  secretName: smartcoffee-chainsmart-id
+  duration: 2160h # 90d
+  renewBefore: 168h # 7d
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 4096
+  usages:
+    - server auth
+    - client auth
+  dnsNames:
+    - "smartcoffee.chainsmart.id"
+  issuerRef:
+    name: letsencrypt-prod-cluster
+    kind: ClusterIssuer
+    group: cert-manager.io
