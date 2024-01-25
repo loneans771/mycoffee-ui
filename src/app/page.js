@@ -38,7 +38,7 @@ function Index() {
                 color="inherit"
                 sx={{ fontSize: 24 }}
               >
-                <img className="size-16" src="logo/cooplogo.svg" alt="Logo" />
+                <img className="size-12" src="logo/cooplogo.svg" alt="Logo" />
               </Link>
             </Grid>
             <Grid item xs={6} container justifyContent="flex-end">
@@ -49,7 +49,7 @@ function Index() {
                 color="inherit"
                 sx={{ fontSize: 24 }}
               >
-                <img className="size-16" src="logo/222.png" alt="Logo" />
+                <img className="size-14" src="logo/222.png" alt="Logo" />
               </Link>
               {/* Additional right side content */}
             </Grid>
