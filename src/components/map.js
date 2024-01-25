@@ -22,12 +22,12 @@ const Map = () => {
   const [isClient, setIsClient] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const data = [
-    { name: "Kintamani Farmers", coordinates: [-8.2574, 115.354] },
-    { name: "Kintamani Collector", coordinates: [-8.5069, 115.2625] },
-    { name: "Kintamani Processor", coordinates: [-8.6478, 115.1385] },
-    { name: "Kintamani Trader", coordinates: [-6.1403, 106.7559] },
-    { name: "Kintamani Roaster", coordinates: [48.8566, 2.3522] },
-    { name: "Kintamani Vendor", coordinates: [45.764, 4.8357] },
+    { name: "Farmer", coordinates: [-8.2574, 115.354] },
+    { name: "Collector", coordinates: [-8.5069, 115.2625] },
+    { name: "Processor", coordinates: [-8.6478, 115.1385] },
+    { name: "Trader", coordinates: [-6.1403, 106.7559] },
+    { name: "Roaster", coordinates: [48.8566, 2.3522] },
+    { name: "Vendor", coordinates: [45.764, 4.8357] },
     // Add more locations as needed
   ];
 
@@ -50,7 +50,7 @@ const Map = () => {
   const datas = [
     {
       names1: "Arabica Coffee",
-      names2: "Certified",
+      names2: "Farm Certification",
       information1: (
         <div>
           The vibrant red cherries are carefully plucked, signaling the
@@ -72,7 +72,7 @@ const Map = () => {
     },
     {
       names1: "Arabica Coffee",
-      names2: "Certified",
+      names2: "Collector Certification",
       information1: (
         <div>
           The vibrant red cherries are carefully plucked, signaling the
@@ -152,21 +152,25 @@ const Map = () => {
 
     const items = [
       {
-        names: "Kintamani Farmers",
+        names: "Kintamani Farmer",
         imageUrl: "logo/snapshot_locationfarm.png",
         itemdesc1: "-8.2574 , 115.3540 Near Gunung Batur Bukit Payang - Bali",
-        itemdesc2: "this coffee was harvested at 1200m at surface",
-        itemdesc3: "12 - 01 - 2023",
+        itemdesc2: "this coffee was harvested at 1200m above sea level",
+        itemdesc3: "12 December 2023",
         itemdesc4: "Arabica",
         itemdesc5:
-          "Grown in the range of altitude between 1.200 - 1.500 MASL, this coffee came from Batukaang village in Kintamani, Bali.",
+          "Grown in the range of altitude between 1.200 - 1.500 MASL, this coffee comes from Batukaang village in Kintamani, Bali.",
         itemdesc6: (
           <div>
             Carbon Footprint = Fuel Consumed * Emission Factor <br />
             Carbon Footprint = 6,6 liters * 2,68 kg CO2/liter ≈ 17,648 kg CO2
           </div>
         ),
-        itemdesc7: "1500 Hectares",
+        itemdesc7: (
+          <div>
+            2 hectares <br />
+          </div>
+        ),
         itemdesc8: "gatau",
         itemclass: "1 of 6",
         iteminfo: "Location",
@@ -175,14 +179,14 @@ const Map = () => {
         iteminfo4: "Bean Type",
         iteminfo5: "Origin Coffee",
         iteminfo6: "Carbon Footprint",
-        iteminfo7: "planting area",
+        iteminfo7: "Farm Size",
         iteminfo8: "Carbon Footprint",
         itemsoninformation: "Arabica Beans",
         itemsoncertified: "logo/certified.png",
         Methods: "FullWashed",
       },
       {
-        names: "Kintamani Collectors",
+        names: "Kintamani Collector",
         imageUrl: "logo/snapshot_ubud.png",
         imageUrl3: "logo/fairtradess.png",
         itemdesc1: "(-8.5069, 115.2625) near Ubud - Bali",
@@ -196,16 +200,16 @@ const Map = () => {
             Carbon Footprint = 5,6 liters * 2,68 kg CO2/liter ≈ 15,008 kg CO2
           </div>
         ),
-        itemdesc6: "4000 t / month",
-        itemdesc7: " 3900 t / month",
+        itemdesc6: "4000 t per month",
+        itemdesc7: " 3900 t per month",
         itemclass: "2 of 6",
         iteminfo: "Location",
         iteminfo2: "Type Beans",
         iteminfo3: "Certified",
         iteminfo4: "Origin",
         iteminfo5: "Carbon Footprint",
-        iteminfo6: "Many to Buy",
-        iteminfo7: "Many to Sell",
+        iteminfo6: "Volume Collected per Month",
+        iteminfo7: "Volume Sold per Month",
         itemsorigin: "",
         itemsbeans: " ",
         Methods: " ",
@@ -233,28 +237,27 @@ const Map = () => {
         Methods: " ",
       },
       {
-        names: "Kintamani Traders",
+        names: "Kintamani Trader",
         imageUrl: "logo/snapshot_kapuk.png",
         itemdesc1: "(-6.1403, 106.7559) near Kapuk - Jakarta",
         itemdesc2: (
           <div>
-            in 1 weeks on warehouse <br />
-            Carbon Footprint=1,000,000kg × 0,1kg CO2/kg
-            <br />
-            Carbon Footprint=100,000 kg CO2
+            Avarage 1 week in warehouse <br />
           </div>
         ),
-        itemdesc3: "26 - 1 - 2023",
+        itemdesc3: "15 January 2024",
         itemdesc4: (
           <div>
-            From kapuk to Paris France <br />
-            Carbon Footprint=Fuel Consumed × Emission Factor <br />
-            Carbon Footprint=2313,2 liters × 2,68 kg CO2/liter ≈ 6194,496 kg CO2
+            {" "}
+            From Kapuk to Paris, France <br /> Fuel Consumed: 2313.2 liters{" "}
+            <br /> Emission Factor: 2.68 kg CO2/liter <br /> Carbon Footprint:
+            6194.496 kg CO2 <br /> <br /> Warehouse Storage <br /> Weight of CO2
+            per kg: 0.1 kg CO2/kg <br /> Carbon Footprint: 100,000 kg CO2 <br />{" "}
           </div>
         ),
         itemclass: "4 of 6",
         iteminfo: "Location",
-        iteminfo2: "Long Coffee in Warehouse",
+        iteminfo2: "Storage Period in Warehouse",
         iteminfo3: "Shipping date",
         iteminfo4: "Carbon Footprint",
         itemsorigin: " ",
@@ -321,8 +324,9 @@ const Map = () => {
       {
         names: "Kintamani Vendor",
         imageUrl: "logo/snapshot_lyon.png",
+        imageUrl2: "logo/coffeee.png",
         itemdesc1: "(45.764, 4.8357) near from Lyon - France",
-        itemdesc2: "900 t / month",
+        itemdesc2: "150 Kg per Month",
         itemdesc3: (
           <div>
             in 1 weeks on warehouse <br />
@@ -434,6 +438,16 @@ const Map = () => {
                     >
                       {selectedStepItem.itemdesc2}
                     </p>
+                  </div>
+                  <div className="relative mt-8 flex items-center gap-x-4">
+                    <img
+                      src={selectedStepItem.imageUrl2}
+                      alt=""
+                      className="h-80 w-80  bg-gray-50"
+                      style={{
+                        display: selectedStepItem.imageUrl2 ? "block" : "none",
+                      }}
+                    />
                   </div>
                 </article>
                 <article
@@ -803,22 +817,19 @@ const Map = () => {
           <Polyline positions={getPolylinePositions()} color="blue" />
         )}
       </MapContainer>
-
-      <Grid container justify="center">
-        <Grid item xs={12} sm={12} md={12} lg={12}>
-          <Stepper
-            alternativeLabel
-            style={{ paddingTop: "3em", paddingBottom: "5em" }}
-          >
-            {data.map((location, index) => (
-              <Step key={index} completed={true}>
-                <StepLabel onClick={() => handleStepClick(index)}>
-                  {location.name}
-                </StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-        </Grid>
+      <Grid item xs={12}>
+        <Stepper
+          alternativeLabel
+          style={{ paddingTop: "3em", paddingBottom: "5em" }}
+        >
+          {data.map((location, index) => (
+            <Step key={index} completed={true}>
+              <StepLabel onClick={() => handleStepClick(index)}>
+                {location.name}
+              </StepLabel>
+            </Step>
+          ))}
+        </Stepper>
       </Grid>
       <Card style={{ paddingBottom: "7em" }}>
         <div className="background-container flex items-center justify-center rounded-md">
@@ -917,7 +928,7 @@ const Map = () => {
           <div className="grid grid-cols-12 gap-1">
             <div className="col-span-11">
               <h4 className="text-2xl font-mono" style={{ color: "white" }}>
-                Informations
+                Information
               </h4>
             </div>
           </div>
