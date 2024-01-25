@@ -187,7 +187,7 @@ const Map = () => {
         itemdesc1: "(-8.5069, 115.2625) near Ubud - Bali",
         itemdesc2: "Arabica",
         itemdesc3: "✅ Fair Trades",
-        itemdesc4: "List of Origin here",
+        itemdesc4: <div>The Origin of Kintamani beans from Bali</div>,
         itemdesc5: (
           <div>
             Carbon Footprint = Fuel Consumed * Emission Factor
@@ -779,7 +779,8 @@ const Map = () => {
         key={mapCenter.toString()} // Add this key attribute
         center={mapCenter}
         zoom={12}
-        style={{ height: "400px", width: "100%" }}
+        style={{ height: 400 }}
+        className="md:h-80vh w-full"
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
