@@ -811,11 +811,7 @@ const Map = () => {
             style={{ paddingTop: "3em", paddingBottom: "5em" }}
           >
             {data.map((location, index) => (
-              <Step
-                key={index}
-                completed={true}
-                style={{ transform: "scale(0.5)" }}
-              >
+              <Step key={index} completed={true}>
                 <StepLabel onClick={() => handleStepClick(index)}>
                   {location.name}
                 </StepLabel>
