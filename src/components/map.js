@@ -8,6 +8,7 @@ import {
   StepLabel,
   Container,
   Card,
+  Grid,
   Hidden,
 } from "@mui/material";
 const customIcon = new L.Icon({
@@ -803,18 +804,26 @@ const Map = () => {
         )}
       </MapContainer>
 
-      <Stepper
-        alternativeLabel
-        style={{ paddingTop: "3em", paddingBottom: "5em" }}
-      >
-        {data.map((location, index) => (
-          <Step key={index} completed={true}>
-            <StepLabel onClick={() => handleStepClick(index)}>
-              {location.name}
-            </StepLabel>
-          </Step>
-        ))}
-      </Stepper>
+      <Grid container justify="center">
+        <Grid item xs={12} sm={12} md={12} lg={12}>
+          <Stepper
+            alternativeLabel
+            style={{ paddingTop: "3em", paddingBottom: "5em" }}
+          >
+            {data.map((location, index) => (
+              <Step
+                key={index}
+                completed={true}
+                style={{ transform: "scale(0.5)" }}
+              >
+                <StepLabel onClick={() => handleStepClick(index)}>
+                  {location.name}
+                </StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </Grid>
+      </Grid>
       <Card style={{ paddingBottom: "7em" }}>
         <div className="background-container flex items-center justify-center rounded-md">
           <div className="grid grid-cols-12 gap-1">
