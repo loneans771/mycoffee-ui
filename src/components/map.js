@@ -2,6 +2,7 @@
 import "leaflet/dist/leaflet.css";
 import React, { useEffect, useState, useRef } from "react";
 import L from "leaflet";
+
 import {
   Stepper,
   Step,
@@ -22,12 +23,12 @@ const Map = () => {
   const [isClient, setIsClient] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const data = [
-    { name: "Farmer", coordinates: [-8.2574, 115.354] },
-    { name: "Collector", coordinates: [-8.5069, 115.2625] },
-    { name: "Processor", coordinates: [-8.6478, 115.1385] },
-    { name: "Trader", coordinates: [-6.1403, 106.7559] },
-    { name: "Roaster", coordinates: [48.8566, 2.3522] },
-    { name: "Vendor", coordinates: [45.764, 4.8357] },
+    { name: "Farmer", coordinates: [-2.08547, 101.36392] },
+    { name: "Collector", coordinates: [-2.09557, 101.3535] },
+    { name: "Processor", coordinates: [-1.7481206313263535, 101.3177729936] },
+    { name: "Trader", coordinates: [-1.7481206313263535, 101.31777299363434] },
+    { name: "Roaster", coordinates: [47.81109628694144, 16.24340465128939] },
+    { name: "Vendor", coordinates: [48.2082, 16.3719] },
     // Add more locations as needed
   ];
 
@@ -49,48 +50,49 @@ const Map = () => {
 
   const datas = [
     {
-      names1: "Arabica Coffee",
-      names2: "Farm Certification",
-      information1: (
-        <div>
-          The vibrant red cherries are carefully plucked, signaling the
-          beginning of a meticulous journey from tree to cup. The farmers,
-          guardians of this precious harvest, choose between wet processing or
-          the art of natural drying, each method adding its own brushstroke to
-          the canvas of flavor. As the coffee beans make their way through the
-          processing mills, the air is filled with the aroma of possibility. The
-          beans, now transformed, carry the essence of Kintamani – a
-          well-balanced symphony of flavors. Notes of citrus, floral undertones,
-          and a subtle hint of earthiness characterize this unique brew, a
-          testament to the terroir of the region.
-        </div>
-      ),
-      information2:
-        "the community. It also provides an opportunity for farmers to learn about sustain",
-      image1: "logo/arabicans.png",
-      image2: "logo/certified.png",
+      names1: " ",
+      names2: " ",
+      information1: "",
+      information2: " ",
+      image1: "",
+      imageurls2: "",
     },
     {
-      names1: "Arabica Coffee",
+      names1: "Robusta Kerinci Coffee",
       names2: "Collector Certification",
       information1: (
         <div>
-          The vibrant red cherries are carefully plucked, signaling the
-          beginning of a meticulous journey from tree to cup. The farmers,
-          guardians of this precious harvest, choose between wet processing or
-          the art of natural drying, each method adding its own brushstroke to
-          the canvas of flavor. As the coffee beans make their way through the
-          processing mills, the air is filled with the aroma of possibility. The
-          beans, now transformed, carry the essence of Kintamani – a
-          well-balanced symphony of flavors. Notes of citrus, floral undertones,
-          and a subtle hint of earthiness characterize this unique brew, a
-          testament to the terroir of the region.
+          Kopi Arabika Kerinci yang tumbuh di tanah Vulcano pada ketinggian
+          700-1200 mdpl. Varietas Campuran Andungsari dan Sigararutang. Ditanam
+          dikaki Gunung Kerinci Jambi. Diolah dan diproses dengan teliti oleh
+          Prosesor di Koperasi Alko Kerinci menggunakan aplikasi sistem
+          Traceability.
         </div>
       ),
       information2:
-        "the community. It also provides an opportunity for farmers to learn about sustain",
+        "Negara yang sudah mengimpor Kopi Arabika Kerinci oleh ALKO adalah New Zeland, Norwegia, USA, UK, Japan, Singapura, Malaysia dan lain-lain.",
       image1: "logo/arabicans.png",
-      image2: "logo/fairtradess.png",
+      imageurls2: ["logo/certified_collector.png"],
+    },
+    {
+      names1: " ",
+      names2: "Processor Certification",
+      information1: " ",
+      information2: " ",
+      image1: " ",
+      imageurls2: ["logo/certified_processor.png"],
+    },
+    {
+      names1: " ",
+      names2: "Trader Certification",
+      information1: " ",
+      information2: " ",
+      image1: " ",
+      imageurls2: [
+        "logo/certified_trader3.png",
+        "logo/certified_trader1.png",
+        "logo/certified_trader2.png",
+      ],
     },
     {
       names1: " ",
@@ -98,7 +100,7 @@ const Map = () => {
       information1: " ",
       information2: " ",
       image1: " ",
-      image2: " ",
+      imageurls2: " ",
     },
     {
       names1: " ",
@@ -106,23 +108,7 @@ const Map = () => {
       information1: " ",
       information2: " ",
       image1: " ",
-      image2: " ",
-    },
-    {
-      names1: " ",
-      names2: " ",
-      information1: " ",
-      information2: " ",
-      image1: " ",
-      image2: " ",
-    },
-    {
-      names1: " ",
-      names2: " ",
-      information1: " ",
-      information2: " ",
-      image1: " ",
-      image2: " ",
+      imageurls2: " ",
     },
   ];
 
@@ -152,14 +138,14 @@ const Map = () => {
 
     const items = [
       {
-        names: "Kintamani Farmer",
-        imageUrl: "logo/snapshot_locationfarm.png",
-        itemdesc1: "-8.2574 , 115.3540 Near Gunung Batur Bukit Payang - Bali",
-        itemdesc2: "this coffee was harvested at 1200m above sea level",
-        itemdesc3: "12 December 2023",
-        itemdesc4: "Arabica",
-        itemdesc5:
-          "Grown in the range of altitude between 1.200 - 1.500 MASL, this coffee comes from Batukaang village in Kintamani, Bali.",
+        names: "Kerinci Farmer",
+        imageUrl: "logo/snapshot_farmer.png",
+        itemdesc1:
+          "Baru Pulau Sangkar, Kec. Batang Merangin, Kabupaten Kerinci, Jambi",
+        itemdesc2: "800 m",
+        itemdesc3: "January 2024",
+        itemdesc4: "Robusta Washed",
+        itemdesc5: "The Origin of Kerinci",
         itemdesc6: (
           <div>
             Carbon Footprint = Fuel Consumed * Emission Factor <br />
@@ -186,13 +172,14 @@ const Map = () => {
         Methods: "FullWashed",
       },
       {
-        names: "Kintamani Collector",
-        imageUrl: "logo/snapshot_ubud.png",
+        names: "Koperasi Longka Alam Sakti",
+        imageUrl: "logo/snapshot_collector.png",
         imageUrl3: "logo/fairtradess.png",
-        itemdesc1: "(-8.5069, 115.2625) near Ubud - Bali",
-        itemdesc2: "Arabica",
-        itemdesc3: "✅ Fair Trades",
-        itemdesc4: <div>The Origin of Kintamani beans from Bali</div>,
+        itemdesc1:
+          "Jl. Sungai Penuh - Bangko, Baru Pulau Sangkar, Kec. Batang Merangin, Kabupaten Kerinci, Jambi 37175",
+        itemdesc2: "robusta asala",
+        itemdesc3: "✅ Coffee processing industry for SME",
+        itemdesc4: <div>The Origin of Kerinci</div>,
         itemdesc5: (
           <div>
             Carbon Footprint = Fuel Consumed * Emission Factor
@@ -200,8 +187,9 @@ const Map = () => {
             Carbon Footprint = 5,6 liters * 2,68 kg CO2/liter ≈ 15,008 kg CO2
           </div>
         ),
-        itemdesc6: "4000 t per month",
-        itemdesc7: " 3900 t per month",
+        imageUrl3: "logo/certified_collector.png",
+        itemdesc6: "400 mt",
+        itemdesc7: " 390 mt",
         itemclass: "2 of 6",
         iteminfo: "Location",
         iteminfo2: "Type Beans",
@@ -215,44 +203,48 @@ const Map = () => {
         Methods: " ",
       },
       {
-        names: "Kintamani Processors",
-        imageUrl: "logo/snapshot_canggu.png",
-        itemdesc1: "(-8.6478, 115.1385) near Canggu - Bali",
-        itemdesc2: "Full Washed",
-        itemdesc3: "2400 t / month",
-        itemdesc4: (
-          <div>
-            For canggu to Jakarta <br />
-            Carbon Footprint = Fuel Consumed * Emission Factor <br />
-            Carbon Footprint = 236 liters * 2.68 kg CO2/liter ≈ 632,48 kg CO2
-          </div>
-        ),
+        names: "Koperasi Alam Korintji",
+        imageUrl: "logo/snapshot_processor_kop.png",
+        itemdesc1:
+          "'jl. Raya sungai sikai no 14 Desa sungai sikai, kec gunung tujuh kerinci, jambi",
+        itemdesc2: "Robusta Washed",
+        itemdesc3: "C.A.F.E Practices",
+        imageurl2: "logo/cafecertified.png",
+
         itemclass: "3 of 6",
         iteminfo: "Location",
         iteminfo2: "Process",
-        iteminfo3: "Volume to Process",
-        iteminfo4: "Carbon Footprint",
+        iteminfo3: "Certified",
+        imageUrl3: "logo/certified_processor.png",
         itemsorigin: " ",
         itemsbeans: " ",
         Methods: " ",
       },
       {
-        names: "Kintamani Trader",
-        imageUrl: "logo/snapshot_kapuk.png",
-        itemdesc1: "(-6.1403, 106.7559) near Kapuk - Jakarta",
+        names: "PT. Alko Sumatera Nasional",
+        imageUrl: "logo/snapshot_trader.png",
+        itemdesc1:
+          "'jl. Raya sungai sikai no 15 Desa sungai sikai, kec gunung tujuh kerinci, jambi",
         itemdesc2: (
           <div>
             Avarage 1 week in warehouse <br />
           </div>
         ),
-        itemdesc3: "15 January 2024",
+        itemdesc3: "06 February 2024",
         itemdesc4: (
           <div>
             {" "}
-            From Kapuk to Paris, France <br /> Fuel Consumed: 2313.2 liters{" "}
-            <br /> Emission Factor: 2.68 kg CO2/liter <br /> Carbon Footprint:
-            6194.496 kg CO2 <br /> <br /> Warehouse Storage <br /> Weight of CO2
-            per kg: 0.1 kg CO2/kg <br /> Carbon Footprint: 100,000 kg CO2 <br />{" "}
+            From Kerinci to Austria <br /> Fuel Consumed: 2313.2 liters <br />{" "}
+            Emission Factor: 2.68 kg CO2/liter <br /> Carbon Footprint: 6194.496
+            kg CO2 <br /> <br /> Warehouse Storage <br /> Weight of CO2 per kg:
+            0.1 kg CO2/kg <br /> Carbon Footprint: 100,000 kg CO2 <br />{" "}
+          </div>
+        ),
+        itemdesc5: (
+          <div>
+            ✅ Training Assesor of Competency <br />
+            ✅ Q Grader Arabica
+            <br />✅ Q Processing level 2 - professional
           </div>
         ),
         itemclass: "4 of 6",
@@ -260,14 +252,20 @@ const Map = () => {
         iteminfo2: "Storage Period in Warehouse",
         iteminfo3: "Shipping date",
         iteminfo4: "Carbon Footprint",
+        iteminfo5: "Certified",
+        imageurl5: [
+          "logo/certified_trader3.png",
+          "logo/certified_trader1.png",
+          "logo/certified_trader2.png",
+        ],
         itemsorigin: " ",
         itemsbeans: " ",
         Methods: " ",
       },
       {
-        names: "Kintamani Roaster",
-        imageUrl: "logo/snapshot_paris.png",
-        itemdesc1: "(48.8566, 2.3522) near from Paris - France",
+        names: "22 Beans",
+        imageUrl: "logo/snapshot_traderss.png",
+        itemdesc1: "Neunkirchner Str. 22, 2700 Wiener Neustadt, Austria",
         itemdesc2: (
           <div>
             Acidity: ★★★
@@ -304,28 +302,22 @@ const Map = () => {
             />
           </div>
         ),
-        itemdesc5: (
-          <div>
-            From Paris France to Lyon <br />
-            Carbon Footprint=Fuel Consumed × Emission Factor <br />
-            Carbon Footprint=76,6 liters × 2,68 kg CO2/liter ≈ 205,088 kg CO2
-          </div>
-        ),
         itemclass: "5 of 6",
         iteminfo: "Location",
         iteminfo2: "Tasting Notes",
         iteminfo3: "Roasting Level",
         iteminfo4: "Cupping Notes",
-        iteminfo5: "Carbon Footprint",
+        iteminfo5: "Certified",
+        imageurl5: ["logo/certified.png"],
         itemsorigin: " ",
         itemsbeans: " ",
         Methods: " ",
       },
       {
-        names: "Kintamani Vendor",
-        imageUrl: "logo/snapshot_lyon.png",
-        imageUrl2: "logo/coffeee.png",
-        itemdesc1: "(45.764, 4.8357) near from Lyon - France",
+        names: "Vienna",
+        imageUrl: "logo/alko_product.jpeg",
+        imageUrl2: "logo/alko_product.jpeg",
+        itemdesc1: "(48.2082, 16.3719) near from Vienna - Austria",
         itemdesc2: "150 Kg per Month",
         itemdesc3: (
           <div>
@@ -580,14 +572,20 @@ const Map = () => {
                     </p>
                   </div>
                   <div className="relative mt-8 flex items-center gap-x-4">
-                    <img
-                      src={selectedStepItem.imageUrl5}
-                      alt=""
-                      className="h-40 w-40 rounded-full bg-gray-50"
-                      style={{
-                        display: selectedStepItem.imageUrl5 ? "block" : "none",
-                      }}
-                    />
+                    <div className="flex flex-row">
+                      {selectedStepItem.imageurl5 &&
+                        selectedStepItem.imageurl5.map((imageurl5, index) => (
+                          <img
+                            key={index}
+                            src={imageurl5}
+                            alt=""
+                            className="h-40 w-40 bg-gray-50"
+                            style={{
+                              display: imageurl5 ? "block" : "none",
+                            }}
+                          />
+                        ))}
+                    </div>
                     <div className="text-sm leading-6">
                       <p className="font-semibold text-gray-900">
                         <a href={selectedStepItem.itemdesc}>
@@ -1008,14 +1006,22 @@ const Map = () => {
                 <p className="line-clamp-7 text-sm leading-6 text-gray-600"></p>
               </div>
               <div className="relative mt-8 flex items-center gap-x-4">
-                <img
-                  src={selectedStepItems.image2}
-                  alt=""
-                  className="h-70 w-70  bg-gray-50"
-                  style={{
-                    display: selectedStepItems.image2 ? "block" : "none",
-                  }}
-                />
+                <div className="flex items-center gap-x-4">
+                  {Array.isArray(selectedStepItems.imageurls2) && (
+                    <div className="flex flex-col">
+                      {selectedStepItems.imageurls2.map((image, index) => (
+                        <div key={index}>
+                          <img
+                            src={image}
+                            alt=""
+                            className="h-70 w-70 bg-gray-50"
+                            style={{ height: "200px", width: "200px" }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-gray-900"></p>
                   {/* <p className="text-gray-600">{post.author.role}</p> */}
@@ -1024,52 +1030,15 @@ const Map = () => {
             </article>
           </div>
         </div>
-        <footer className="bg-blue-300 py-8">
-          <div className="container mx-auto">
-            <div className="flex flex-wrap items-center justify-between">
-              <div className="w-full px-2 md:w-6/12 flex items-center">
-                <h4 className="text-md font-semibold text-black">
-                  Powered by:
-                </h4>
-                <div className="md:block">
-                  <img
-                    src="logo/chain.svg"
-                    className="w-30 h-30 bg-white p-2 rounded-full logo"
-                    alt="Logo"
-                  />
-                </div>
-              </div>
-              <div className="w-full px-4 md:w-6/12">
-                <div className="flex items-center justify-between">
-                  <div className="hidden md:block">
-                    {/* <ul className="flex items-center space-x-6 text-gray-200">
-                      <li>
-                        <a href="#" className="hover:text-gray-300">
-                          Facebook
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="hover:text-gray-300">
-                          Twitter
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="hover:text-gray-300">
-                          LinkedIn
-                        </a>
-                      </li>
-                    </ul> */}
-                  </div>
-                  <div className="hidden md:block">
-                    {/* <img
-                      src="logo/chain.svg"
-                      className="w-30 h-30 bg-white p-2 rounded-full logo"
-                      alt="Logo"
-                    /> */}
-                  </div>
-                </div>
-              </div>
-            </div>
+        <footer className="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+          <div className="flex items-center justify-center">
+            <p className="text-sm">Powered by:</p>
+            <img
+              src="logo/chain.svg"
+              alt="Footer Image"
+              className="h-15 w-15 mx-2"
+            />
+            <p className="text-sm mr-10"> </p>
           </div>
         </footer>
         {/* Add more content or components for the additional information */}

@@ -38,7 +38,7 @@ function Index() {
                 color="inherit"
                 sx={{ fontSize: 24 }}
               >
-                <img className="size-12" src="logo/cooplogo.svg" alt="Logo" />
+                <img className="size-14" src="logo/newapplogo.png" alt="Logo" />
               </Link>
             </Grid>
             <Grid item xs={6} container justifyContent="flex-end">
@@ -48,10 +48,18 @@ function Index() {
                 underline="none"
                 color="inherit"
                 sx={{ fontSize: 24 }}
-              >
-                <img className="size-14" src="logo/222.png" alt="Logo" />
-              </Link>
+              ></Link>
               {/* Additional right side content */}
+              <p
+                style={{
+                  fontFamily: "Arial, sans-serif",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                  color: "#FFF",
+                }}
+              >
+                Smart Coffee
+              </p>
             </Grid>
           </Grid>
         </Toolbar>
