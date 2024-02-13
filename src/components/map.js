@@ -142,7 +142,7 @@ const Map = () => {
         imageUrl: "logo/snapshot_farmer.png",
         itemdesc1:
           "Baru Pulau Sangkar, Kec. Batang Merangin, Kabupaten Kerinci, Jambi",
-        itemdesc2: "800 m",
+        itemdesc2: "700 m",
         itemdesc3: "January 2024",
         itemdesc4: "Robusta Washed",
         itemdesc5: "The Origin of Kerinci",
